@@ -18,7 +18,7 @@ Custom models example: Arbitrary number of complex decisions per player.
 class Constants(BaseConstants):
     name_in_url = 'example_decisions'
     players_per_group = None
-    num_rounds = 2
+    num_rounds = 3
     num_decisions_per_round = 5
 
 
@@ -53,7 +53,7 @@ class Decision(Model):   # our custom model inherits from Django's base class "M
     )
 
     value = models.IntegerField()    # will be randomly generated
-    boolean_decision = models.BooleanField()
+    player_decision = models.BooleanField()
     reason = models.CharField(choices=REASONS)
 
     player = ForeignKey(Player)    # creates 1:m relation -> this decision was made by a certain player

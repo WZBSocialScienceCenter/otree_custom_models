@@ -5,7 +5,7 @@ from .models import Constants, Player, Decision
 from django.forms import modelformset_factory
 
 
-DecisionFormSet = modelformset_factory(Decision, fields=('boolean_decision', 'reason'), extra=0)
+DecisionFormSet = modelformset_factory(Decision, fields=('player_decision', 'reason'), extra=0)
 
 
 class MakeDecisionsPage(Page):
@@ -33,16 +33,16 @@ class MakeDecisionsPage(Page):
 
             # get the inputs
             dec_id = int(submitted_data[input_prefix + 'id'])
-            bool_decision = submitted_data[input_prefix + 'boolean_decision']
+            player_decision = submitted_data[input_prefix + 'player_decision']
             reason = submitted_data[input_prefix + 'reason']
 
             # lookup by ID and save submitted data
             dec = decision_objs_by_id[dec_id]
 
-            if bool_decision != '':
-                dec.boolean_decision = bool_decision == 'True'
+            if player_decision != '':
+                dec.player_decision = player_decision == 'True'
             else:
-                dec.boolean_decision = None
+                dec.player_decision = None
 
             if reason != '':
                 dec.reason = reason
