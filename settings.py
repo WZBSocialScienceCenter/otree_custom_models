@@ -115,6 +115,8 @@ SESSION_CONFIGS = [
     }
 ]
 
+ROOT_URLCONF = 'example_decisions.urls'
+
 # anything you put after the below line will override
 # oTree's default settings. Use with caution.
 otree.settings.augment_settings(globals())
