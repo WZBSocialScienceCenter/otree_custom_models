@@ -8,8 +8,8 @@
 {% block content %}
 
 
-<ul>
 {{ decision_formset.management_form }}
+<ul>
 {% for val, form in decision_values_and_forms %}
         <li>Value <b>{{ val }}</b> &mdash; {{ form }}</li>
 {% endfor %}

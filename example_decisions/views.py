@@ -1,7 +1,7 @@
 from otree.api import Currency as c, currency_range
 from . import models
 from ._builtin import Page, WaitPage
-from .models import Constants, Player, Decision
+from .models import Constants, Decision
 from django.forms import modelformset_factory
 
 
@@ -10,6 +10,7 @@ DecisionFormSet = modelformset_factory(Decision, fields=('player_decision', 'rea
 
 class MakeDecisionsPage(Page):
     def vars_for_template(self):
+        # get decisions for this player
         decision_qs = Decision.objects.filter(player__exact=self.player)
         assert len(decision_qs) == Constants.num_decisions_per_round
 
