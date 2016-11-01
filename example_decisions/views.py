@@ -1,4 +1,4 @@
-from otree.api import Currency as c, currency_range
+from .utils import get_field_names_for_csv
 from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants, Decision
@@ -7,7 +7,6 @@ from django.forms import modelformset_factory
 from collections import OrderedDict
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-from otree.export import get_field_names_for_csv
 
 
 DecisionFormSet = modelformset_factory(Decision, fields=('player_decision', 'reason'), extra=0)
@@ -128,7 +127,6 @@ def export_view_json(request):
                     for dec in decisions:
                         dec_output = create_odict_from_object(dec, decision_fieldnames)
                         p_output['decisions'].append(dec_output)
-
 
                     g_output['players'].append(p_output)
 
