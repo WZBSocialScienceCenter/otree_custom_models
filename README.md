@@ -2,7 +2,7 @@
 
 ## Recording complex decisions in experiments
 
-October 2016, Markus Konrad <markus.konrad@wzb.eu> / Berlin Social Science Center
+October 2016, Markus Konrad <markus.konrad@wzb.eu> / [Berlin Social Science Center](https://wzb.eu)
 
 This is the code for the related [blog post](https://datascience.blog.wzb.eu/2016/10/31/using-custom-data-models-in-otree/).
 
